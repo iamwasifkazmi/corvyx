@@ -178,9 +178,14 @@ export const products: Product[] = [
     accent: "#1B4D3E",
     accentSoft: "#E7EDE8",
     icon: "/products/moveup-gym/icon.png",
-    cover: "/products/moveup-gym/home.jpg",
+    cover: "/products/moveup-gym/screenshot-2.jpg",
     featureGraphic: "/products/moveup-gym/feature-graphic.jpg",
     gallery: [
+      {
+        src: "/products/moveup-gym/screenshot-2.jpg",
+        alt: "MoveUp Gym exercise library",
+        label: "Exercises",
+      },
       {
         src: "/products/moveup-gym/home.jpg",
         alt: "MoveUp Gym home screen",
@@ -190,11 +195,6 @@ export const products: Product[] = [
         src: "/products/moveup-gym/screenshot-1.jpg",
         alt: "MoveUp Gym workout screen",
         label: "Workouts",
-      },
-      {
-        src: "/products/moveup-gym/screenshot-2.jpg",
-        alt: "MoveUp Gym exercise library",
-        label: "Exercises",
       },
       {
         src: "/products/moveup-gym/screenshot-3.jpg",
