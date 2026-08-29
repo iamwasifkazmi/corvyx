@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { appPrivacyPolicies } from "@/lib/app-privacy";
+import { products } from "@/lib/products";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -8,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/privacy",
 });
 
-const updated = "August 22, 2026";
+const updated = "August 29, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -20,6 +24,43 @@ export default function PrivacyPage() {
         Privacy Policy
       </h1>
       <p className="mt-4 text-sm text-muted">Last updated: {updated}</p>
+
+      <section className="mt-10 rounded-2xl border border-line bg-surface/70 p-6">
+        <p className="text-[11px] font-medium tracking-[0.16em] text-purple uppercase">
+          App privacy policies
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          Each Corvyx app has its own privacy policy with data handling and
+          deletion details for store listings.
+        </p>
+        <ul className="mt-5 space-y-3">
+          {products.map((product) => {
+            const policy = appPrivacyPolicies.find((p) => p.slug === product.slug);
+            if (!policy) return null;
+
+            return (
+              <li key={product.slug}>
+                <Link
+                  href={`/privacy/${product.slug}`}
+                  className="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 transition hover:border-purple/25"
+                >
+                  <Image
+                    src={product.icon}
+                    alt=""
+                    width={36}
+                    height={36}
+                    className="rounded-lg"
+                  />
+                  <div>
+                    <p className="text-sm font-medium text-ink">{product.name}</p>
+                    <p className="text-xs text-muted">{policy.description}</p>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
 
       <div className="prose-legal mt-10 space-y-8 text-[15px] leading-relaxed text-muted">
         <section>

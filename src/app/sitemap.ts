@@ -1,19 +1,14 @@
 import type { MetadataRoute } from "next";
+import { appPrivacyPolicies } from "@/lib/app-privacy";
 import { products } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
-    "",
-    "/products",
-    "/about",
-    "/contact",
-    "/privacy",
-    "/privacy/moveup-gym",
-    "/terms",
-  ];
+  const staticRoutes = ["", "/products", "/about", "/contact", "/privacy", "/terms"];
 
-  const pages = staticRoutes.map((path) => ({
+  const privacyRoutes = appPrivacyPolicies.map((policy) => `/privacy/${policy.slug}`);
+
+  const pages = [...staticRoutes, ...privacyRoutes].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

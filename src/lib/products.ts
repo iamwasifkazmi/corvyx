@@ -74,6 +74,7 @@ export const products: Product[] = [
     appStoreUrl: "https://apps.apple.com/us/app/ai-pdf-pocket/id6782362901",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.one2w.pdfpocket",
+    privacyPolicyUrl: "/privacy/pdf-pocket#account-deletion",
   },
   {
     slug: "onesnap",
@@ -118,6 +119,7 @@ export const products: Product[] = [
       "Accessibility options including large text and high contrast",
     ],
     platforms: ["iOS", "Android"],
+    privacyPolicyUrl: "/privacy/onesnap#account-deletion",
   },
   {
     slug: "onecut",
@@ -162,6 +164,7 @@ export const products: Product[] = [
       "AI-assisted enhancements where they speed up creation",
     ],
     platforms: ["iOS", "Android"],
+    privacyPolicyUrl: "/privacy/onecut#account-deletion",
   },
   {
     slug: "moveup-gym",
