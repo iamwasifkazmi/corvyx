@@ -6,6 +6,10 @@ import { products } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
 
 export default function HomePage() {
+  const pdfPocket = products.find((p) => p.slug === "pdf-pocket")!;
+  const oneSnap = products.find((p) => p.slug === "onesnap")!;
+  const moveUpGym = products.find((p) => p.slug === "moveup-gym")!;
+
   return (
     <>
       <section className="hero-stage relative overflow-x-clip pt-14">
@@ -34,8 +38,8 @@ export default function HomePage() {
               Elegant apps that make everyday life easier.
             </h1>
             <p className="reveal reveal-delay-3 mt-3 max-w-sm text-sm leading-relaxed text-muted sm:text-[15px]">
-              Documents, photos, and video — crafted for clarity, privacy, and
-              calm speed.
+              Documents, photos, video, and fitness — crafted for clarity, privacy,
+              and calm speed.
             </p>
 
             <div className="reveal reveal-delay-4 mt-7 flex flex-wrap gap-2.5">
@@ -83,8 +87,8 @@ export default function HomePage() {
             {/* OneSnap — left */}
             <div className="float-a absolute top-[16%] left-[0%] z-[1] w-[36%] max-w-[170px] sm:left-[2%]">
               <PhoneMock
-                src={products[1].cover}
-                alt={`${products[1].shortName} preview`}
+                src={oneSnap.cover}
+                alt={`${oneSnap.shortName} preview`}
                 className="!w-full drop-shadow-xl"
               />
             </div>
@@ -92,22 +96,22 @@ export default function HomePage() {
             {/* PDF Pocket — center */}
             <div className="float-b absolute top-[10%] left-1/2 z-[3] w-[44%] max-w-[220px] -translate-x-1/2 sm:top-[6%]">
               <PhoneMock
-                src={products[0].cover}
-                alt={`${products[0].shortName} preview`}
+                src={pdfPocket.cover}
+                alt={`${pdfPocket.shortName} preview`}
                 priority
                 className="!w-full drop-shadow-2xl"
               />
             </div>
 
-            {/* OneCut video — top right */}
+            {/* MoveUp Gym — top right */}
             <div className="float-c absolute top-0 right-[0%] z-[2] w-[38%] max-w-[180px] sm:right-[1%]">
               <PhoneMock
-                src={products[2].cover}
-                alt={`${products[2].shortName} video editor`}
+                src={moveUpGym.cover}
+                alt={`${moveUpGym.shortName} fitness app`}
                 className="!w-full drop-shadow-xl"
               />
               <p className="mt-1.5 text-center text-[10px] font-semibold tracking-[0.12em] text-purple uppercase">
-                OneCut · Video
+                MoveUp · Fitness
               </p>
             </div>
           </div>
@@ -133,7 +137,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
               <ProductShowcaseCard key={product.slug} product={product} />
             ))}

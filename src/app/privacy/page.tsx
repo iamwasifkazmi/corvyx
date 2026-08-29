@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             This Privacy Policy explains how {siteConfig.name} (“we”, “us”, or
             “our”) collects, uses, and protects information when you visit{" "}
             {siteConfig.url} or use our mobile applications, including PDF Pocket,
-            OneSnap: Photo Editor, and OneCut: Video Editor &amp; Maker.
+            OneSnap: Photo Editor, OneCut: Video Editor &amp; Maker, and MoveUp Gym.
           </p>
         </section>
 

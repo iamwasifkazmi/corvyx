@@ -81,6 +81,16 @@ export default async function ProductDetailPage({ params }: Props) {
                 playStoreUrl={product.playStoreUrl}
                 className="mt-8"
               />
+              {product.privacyPolicyUrl && (
+                <p className="mt-4 text-sm text-muted">
+                  <Link
+                    href={product.privacyPolicyUrl}
+                    className="text-purple hover:underline"
+                  >
+                    Privacy Policy
+                  </Link>
+                </p>
+              )}
               <div className="mt-5 flex flex-wrap gap-2">
                 {product.platforms.map((p) => (
                   <span
@@ -109,6 +119,23 @@ export default async function ProductDetailPage({ params }: Props) {
         </div>
 
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
+          {product.featureGraphic && (
+            <div className="mb-12">
+              <h2 className="font-display text-3xl tracking-[-0.02em] text-ink">
+                Feature graphic
+              </h2>
+              <div className="relative mt-6 aspect-[1024/500] max-w-4xl overflow-hidden rounded-2xl border border-line shadow-md">
+                <Image
+                  src={product.featureGraphic}
+                  alt={`${product.shortName} feature graphic`}
+                  fill
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )}
+
           <h2 className="font-display text-3xl tracking-[-0.02em] text-ink">
             Screenshots
           </h2>
@@ -185,6 +212,16 @@ export default async function ProductDetailPage({ params }: Props) {
                 >
                   Contact support
                 </Link>
+                {product.privacyPolicyUrl && (
+                  <p className="mt-4 text-sm text-muted">
+                    <Link
+                      href={product.privacyPolicyUrl}
+                      className="text-purple hover:underline"
+                    >
+                      Privacy Policy →
+                    </Link>
+                  </p>
+                )}
               </div>
             </aside>
           </div>

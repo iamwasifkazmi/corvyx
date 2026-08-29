@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Products",
   description:
-    "Explore Corvyx apps — PDF Pocket, OneSnap Photo Editor, and OneCut Video Editor with screenshots and features.",
+    "Explore Corvyx apps — PDF Pocket, OneSnap, OneCut, and MoveUp Gym with screenshots and features.",
   path: "/products",
 });
 
@@ -21,11 +21,11 @@ export default function ProductsPage() {
           Apps with real screens, real purpose.
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-muted">
-          PDF Pocket, OneSnap, and OneCut — previews, features, and details.
+          PDF Pocket, OneSnap, OneCut, and MoveUp Gym — previews, features, and details.
         </p>
       </div>
 
-      <div className="mt-8 grid gap-5 md:grid-cols-3">
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <ProductShowcaseCard key={product.slug} product={product} />
         ))}

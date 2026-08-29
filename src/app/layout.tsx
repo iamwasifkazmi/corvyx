@@ -29,6 +29,8 @@ export const metadata: Metadata = {
     "PDF Pocket",
     "OneSnap",
     "OneCut",
+    "MoveUp Gym",
+    "fitness app",
     "photo editor",
     "video editor",
     "PDF tools",

@@ -22,6 +22,8 @@ export type Product = {
   platforms: string[];
   appStoreUrl?: string;
   playStoreUrl?: string;
+  privacyPolicyUrl?: string;
+  featureGraphic?: string;
 };
 
 export const products: Product[] = [
@@ -160,6 +162,74 @@ export const products: Product[] = [
       "AI-assisted enhancements where they speed up creation",
     ],
     platforms: ["iOS", "Android"],
+  },
+  {
+    slug: "moveup-gym",
+    name: "MoveUp Gym",
+    shortName: "MoveUp Gym",
+    tagline: "One fitness app for every workout — with or without equipment.",
+    description:
+      "MoveUp Gym is a no-equipment home workout app with guided programs, a 30-day challenge, exercise library, workout generator, and progress tracking. Train at home, outdoors, or the gym.",
+    category: "Fitness",
+    ai: false,
+    accent: "#1B4D3E",
+    accentSoft: "#E7EDE8",
+    icon: "/products/moveup-gym/icon.png",
+    cover: "/products/moveup-gym/home.jpg",
+    featureGraphic: "/products/moveup-gym/feature-graphic.jpg",
+    gallery: [
+      {
+        src: "/products/moveup-gym/home.jpg",
+        alt: "MoveUp Gym home screen",
+        label: "Home",
+      },
+      {
+        src: "/products/moveup-gym/screenshot-1.jpg",
+        alt: "MoveUp Gym workout screen",
+        label: "Workouts",
+      },
+      {
+        src: "/products/moveup-gym/screenshot-2.jpg",
+        alt: "MoveUp Gym exercise library",
+        label: "Exercises",
+      },
+      {
+        src: "/products/moveup-gym/screenshot-3.jpg",
+        alt: "MoveUp Gym progress tracking",
+        label: "Progress",
+      },
+      {
+        src: "/products/moveup-gym/screenshot-4.jpg",
+        alt: "MoveUp Gym programs",
+        label: "Programs",
+      },
+    ],
+    features: [
+      {
+        title: "Workout generator",
+        desc: "Personalized sessions based on your level, goals, equipment, and available time.",
+      },
+      {
+        title: "Exercise library",
+        desc: "Search and filter hundreds of exercises — no gear, dumbbells, bands, and more.",
+      },
+      {
+        title: "Programs & challenge",
+        desc: "Structured programs and a 30-day challenge to keep you consistent.",
+      },
+      {
+        title: "Progress & streaks",
+        desc: "Track workouts, streaks, achievements, and weekly activity over time.",
+      },
+    ],
+    highlights: [
+      "No equipment required — or adapt to what you have",
+      "Guided timer player with rest, pause, and skip",
+      "26-language support for a global audience",
+      "Onboarding tailored to your fitness level and goals",
+    ],
+    platforms: ["iOS", "Android"],
+    privacyPolicyUrl: "/privacy/moveup-gym#account-deletion",
   },
 ];
 

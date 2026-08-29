@@ -3,7 +3,15 @@ import { products } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/products", "/about", "/contact", "/privacy", "/terms"];
+  const staticRoutes = [
+    "",
+    "/products",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/privacy/moveup-gym",
+    "/terms",
+  ];
 
   const pages = staticRoutes.map((path) => ({
     url: `${siteConfig.url}${path}`,
