@@ -11,6 +11,11 @@ export type AppPrivacyPolicy = {
   informationCollected: string[];
   howWeUse: string[];
   onDeviceNote?: string;
+  /** Explicit retention practices — required by Google Play User Data policy */
+  dataRetention: {
+    intro: string;
+    items: string[];
+  };
   dataDeletion?: {
     intro: string;
     steps?: string[];
@@ -41,6 +46,16 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
     ],
     onDeviceNote:
       "PDF Pocket is designed for on-device processing. Common PDF operations run locally on your phone or tablet. We do not upload your documents to our servers for core tooling.",
+    dataRetention: {
+      intro:
+        "PDF Pocket does not store your documents on our servers. Retention is limited to what remains on your device.",
+      items: [
+        "Documents, scans, and edits you create are retained only on your device until you delete them or uninstall the app.",
+        "We do not retain copies of your PDFs or images on Corvyx servers for core PDF tooling.",
+        "If you contact us for support, any email you send is retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "Optional diagnostics or crash reports, if enabled, may be retained by our service providers for a limited period needed to diagnose issues (typically up to 90 days).",
+      ],
+    },
     dataDeletion: {
       intro:
         "PDF Pocket does not require an account. Your documents and edits stay on your device unless you choose to share or export them.",
@@ -74,6 +89,16 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
     ],
     onDeviceNote:
       "OneSnap processes your photos on your device. Edits, drafts, and private album items remain local unless you export or share them.",
+    dataRetention: {
+      intro:
+        "OneSnap does not store your photos on our servers. Retention is limited to what remains on your device.",
+      items: [
+        "Photos, drafts, private album items, and edits are retained only on your device until you delete them or uninstall the app.",
+        "We do not retain copies of your photos on Corvyx servers for core editing features.",
+        "If you contact us for support, any email you send is retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "Optional diagnostics or crash reports, if enabled, may be retained by our service providers for a limited period needed to diagnose issues (typically up to 90 days).",
+      ],
+    },
     dataDeletion: {
       intro:
         "OneSnap does not require an account. You can remove your edits and private content directly in the app or on your device.",
@@ -107,6 +132,17 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
     ],
     onDeviceNote:
       "OneCut keeps your video projects on your device. Exported videos are saved where you choose — gallery, files, or share sheet.",
+    dataRetention: {
+      intro:
+        "OneCut primarily stores projects on your device. Retention depends on where your content lives.",
+      items: [
+        "Video projects, drafts, and export settings are retained only on your device until you delete them or uninstall the app.",
+        "We do not retain copies of your videos on Corvyx servers for core editing features.",
+        "If you use optional AI-assisted features that require network access, any temporary processing data is not retained longer than needed to complete the request.",
+        "If you contact us for support, any email you send is retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "Optional diagnostics or crash reports, if enabled, may be retained by our service providers for a limited period needed to diagnose issues (typically up to 90 days).",
+      ],
+    },
     dataDeletion: {
       intro:
         "OneCut does not require an account. You can delete projects and exported videos from within the app or your device.",
@@ -140,6 +176,20 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
       "To respond to support requests and improve app reliability.",
       "To comply with legal obligations where applicable.",
     ],
+    dataRetention: {
+      intro:
+        "MoveUp Gym stores account and fitness data on our servers so your progress syncs across sessions. We retain data only as long as needed to provide the service, as described below.",
+      items: [
+        "Account data (name, email, password hash) and fitness profile (level, goals, body stats, equipment, preferences, language) are retained on our servers for as long as your account remains active.",
+        "Workout history, streaks, achievements, favorites, challenge progress, and related stats are retained on our servers for as long as your account remains active, or until you use Delete all data in the app.",
+        "When you use Delete all data, we permanently delete your workout history and reset stats, streaks, favorites, and challenge progress from our servers. Your account (name and email) remains so you can keep signing in.",
+        "When you delete your account (in-app or by email request), we permanently delete your user account and associated workout history from our servers. Deletion is typically completed immediately in-app, or within 30 days for email requests.",
+        "Local device data (such as login token, language preference, and onboarding flags stored via device preferences) remains on your device until you log out, clear app data, or uninstall MoveUp Gym.",
+        "Advertising partners (for example Google AdMob) may process advertising identifiers according to their own retention policies and your device consent settings. We do not control how long those partners retain identifiers.",
+        "Support emails you send us are retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "We do not keep backup copies of deleted account data longer than needed for secure deletion and disaster recovery (typically no more than 30 days after account deletion), after which they are purged.",
+      ],
+    },
     dataDeletion: {
       intro:
         "You can delete your workout data or permanently delete your MoveUp Gym account directly inside the app. No email request is required for in-app deletion.",
@@ -182,7 +232,12 @@ type AppPrivacyPolicyPageProps = {
 };
 
 export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
-  const updated = "August 29, 2026";
+  const updated = "September 5, 2026";
+  let section = 0;
+  const next = () => {
+    section += 1;
+    return section;
+  };
 
   return (
     <div className="mx-auto max-w-3xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36">
@@ -197,7 +252,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
       <div className="prose-legal mt-10 space-y-8 text-[15px] leading-relaxed text-muted">
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            1. Who we are
+            {next()}. Who we are
           </h2>
           <p className="mt-3">
             This Privacy Policy explains how {siteConfig.name} (“we”, “us”, or
@@ -213,7 +268,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            2. Information we collect
+            {next()}. Information we collect
           </h2>
           <p className="mt-3">
             Depending on how you use {policy.appName}, we may process:
@@ -227,7 +282,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            3. How we use information
+            {next()}. How we use information
           </h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             {policy.howWeUse.map((item) => (
@@ -239,16 +294,28 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
         {policy.onDeviceNote && (
           <section>
             <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-              4. On-device processing
+              {next()}. On-device processing
             </h2>
             <p className="mt-3">{policy.onDeviceNote}</p>
           </section>
         )}
 
+        <section id="data-retention">
+          <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
+            {next()}. Data retention
+          </h2>
+          <p className="mt-3">{policy.dataRetention.intro}</p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            {policy.dataRetention.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
         {policy.dataDeletion && (
           <section id="account-deletion">
             <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-              {policy.onDeviceNote ? "5. Data & account deletion" : "4. Account & data deletion"}
+              {next()}. Data &amp; account deletion
             </h2>
             <p className="mt-3">{policy.dataDeletion.intro}</p>
 
@@ -341,7 +408,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            {policy.onDeviceNote ? "6. Sharing" : policy.dataDeletion ? "5. Sharing" : "4. Sharing"}
+            {next()}. Sharing
           </h2>
           <p className="mt-3">
             We do not sell your personal information. We may share limited data with
@@ -353,7 +420,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            {policy.onDeviceNote ? "7. Children’s privacy" : policy.dataDeletion ? "6. Children’s privacy" : "5. Children’s privacy"}
+            {next()}. Children’s privacy
           </h2>
           <p className="mt-3">
             {policy.appName} is not directed to children under 13, and we do not
@@ -363,7 +430,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            {policy.onDeviceNote ? "8. Changes" : policy.dataDeletion ? "7. Changes" : "6. Changes"}
+            {next()}. Changes
           </h2>
           <p className="mt-3">
             We may update this policy from time to time. The “Last updated” date at
@@ -373,7 +440,7 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
 
         <section>
           <h2 className="font-display text-xl text-ink" style={{ fontWeight: 700 }}>
-            {policy.onDeviceNote ? "9. Contact" : policy.dataDeletion ? "8. Contact" : "7. Contact"}
+            {next()}. Contact
           </h2>
           <p className="mt-3">
             Privacy questions about {policy.appName}:{" "}

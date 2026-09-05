@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/privacy",
 });
 
-const updated = "August 29, 2026";
+const updated = "September 5, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -134,9 +134,28 @@ export default function PrivacyPage() {
             6. Data retention
           </h2>
           <p className="mt-3">
-            We keep information only as long as needed for the purposes described
-            in this policy, unless a longer period is required by law.
+            We retain information only as long as needed for the purposes described
+            in this policy, unless a longer period is required by law. App-specific
+            retention details (including how long account and workout data are kept,
+            and what happens after deletion) are stated in each app’s privacy policy
+            linked above.
           </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              Website contact messages are kept only as long as needed to respond
+              (typically up to 12 months).
+            </li>
+            <li>
+              Diagnostics or crash data, if enabled, may be retained by service
+              providers for a limited period needed to diagnose issues (typically up
+              to 90 days).
+            </li>
+            <li>
+              When you delete an account or clear app data, we remove associated
+              personal data from our active systems promptly, and purge backups
+              within about 30 days where technically feasible.
+            </li>
+          </ul>
         </section>
 
         <section>
