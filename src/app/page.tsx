@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site";
 export default function HomePage() {
   const pdfPocket = products.find((p) => p.slug === "pdf-pocket")!;
   const oneSnap = products.find((p) => p.slug === "onesnap")!;
-  const moveUpGym = products.find((p) => p.slug === "moveup-gym")!;
+  const monvyn = products.find((p) => p.slug === "monvyn")!;
 
   return (
     <>
@@ -38,8 +38,8 @@ export default function HomePage() {
               Elegant apps that make everyday life easier.
             </h1>
             <p className="reveal reveal-delay-3 mt-3 max-w-sm text-sm leading-relaxed text-muted sm:text-[15px]">
-              Documents, photos, video, and fitness — crafted for clarity, privacy,
-              and calm speed.
+              Documents, photos, video, fitness, and finance — crafted for clarity,
+              privacy, and calm speed.
             </p>
 
             <div className="reveal reveal-delay-4 mt-7 flex flex-wrap gap-2.5">
@@ -103,15 +103,15 @@ export default function HomePage() {
               />
             </div>
 
-            {/* MoveUp Gym — top right */}
+            {/* Monvyn — top right */}
             <div className="float-c absolute top-0 right-[0%] z-[2] w-[38%] max-w-[180px] sm:right-[1%]">
               <PhoneMock
-                src={moveUpGym.cover}
-                alt={`${moveUpGym.shortName} fitness app`}
+                src={monvyn.cover}
+                alt={`${monvyn.shortName} finance app`}
                 className="!w-full drop-shadow-xl"
               />
               <p className="mt-1.5 text-center text-[10px] font-semibold tracking-[0.12em] text-purple uppercase">
-                MoveUp · Fitness
+                Monvyn · Finance
               </p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {products.map((product) => (
               <ProductShowcaseCard key={product.slug} product={product} />
             ))}

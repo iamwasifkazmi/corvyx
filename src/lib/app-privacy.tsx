@@ -213,6 +213,51 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
       emailSubject: "MoveUp Gym account deletion",
     },
   },
+  {
+    slug: "monvyn",
+    appName: "Monvyn",
+    description:
+      "Privacy Policy for Monvyn — how we collect, use, and protect your financial tracking data.",
+    productPath: "/products/monvyn",
+    informationCollected: [
+      "Account details you provide (such as name, email, and password) when you create an account or sign in.",
+      "Expense and income records you enter, including amounts, categories, notes, dates, and related metadata.",
+      "Budget settings you create, including category limits and time periods.",
+      "Device and diagnostics data needed to keep the app stable (for example crash reports, if enabled).",
+      "Advertising identifiers where ads are shown, in accordance with your device settings and applicable consent requirements.",
+    ],
+    howWeUse: [
+      "To provide expense tracking, budgets, insights, and account sync across sessions.",
+      "To authenticate you and keep your ledger secure.",
+      "To send password reset or account-related messages you request.",
+      "To respond to support requests and improve app reliability.",
+      "To comply with legal obligations where applicable.",
+    ],
+    dataRetention: {
+      intro:
+        "Monvyn stores account and ledger data on our servers so your expenses and budgets sync across sessions. We retain data only as long as needed to provide the service, as described below.",
+      items: [
+        "Account data (name, email, password hash) is retained on our servers for as long as your account remains active.",
+        "Expenses, income records, categories, and budgets are retained on our servers for as long as your account remains active, or until you request deletion.",
+        "When you delete your account (by email request), we permanently delete your user account and associated ledger data from our servers. Deletion is typically completed within 30 days after we verify ownership.",
+        "Local device data (such as login token stored via device preferences) remains on your device until you log out, clear app data, or uninstall Monvyn.",
+        "Advertising partners (for example Google AdMob) may process advertising identifiers according to their own retention policies and your device consent settings. We do not control how long those partners retain identifiers.",
+        "Support emails you send us are retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "We do not keep backup copies of deleted account data longer than needed for secure deletion and disaster recovery (typically no more than 30 days after account deletion), after which they are purged.",
+      ],
+    },
+    dataDeletion: {
+      intro:
+        "You can request permanent deletion of your Monvyn account and associated ledger data by email. Uninstalling the app removes local data only; server data remains until your account is deleted.",
+      steps: [
+        "Email us from the address linked to your Monvyn account.",
+        "Use the subject line below and include your registered email address.",
+        "We will verify ownership and permanently delete your account, expenses, budgets, and related data within 30 days.",
+      ],
+      note: "You can sign out anytime from Profile in the app. Deletion of server data is permanent and cannot be undone.",
+      emailSubject: "Monvyn account deletion",
+    },
+  },
 ];
 
 export function getAppPrivacyPolicy(slug: string) {
@@ -395,11 +440,11 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
               <a className="text-accent" href={`mailto:${siteConfig.email}`}>
                 {siteConfig.email}
               </a>{" "}
-              {policy.slug === "moveup-gym"
+              {policy.slug === "moveup-gym" || policy.slug === "monvyn"
                 ? "from the address linked to your account with the subject line"
                 : "with the subject line"}{" "}
               <strong className="text-ink">{policy.dataDeletion.emailSubject}</strong>.
-              {policy.slug === "moveup-gym"
+              {policy.slug === "moveup-gym" || policy.slug === "monvyn"
                 ? " We will verify ownership and delete your account within 30 days."
                 : " We will respond within 30 days."}
             </p>

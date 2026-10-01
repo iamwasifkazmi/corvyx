@@ -234,6 +234,86 @@ export const products: Product[] = [
     platforms: ["iOS", "Android"],
     privacyPolicyUrl: "/privacy/moveup-gym#account-deletion",
   },
+  {
+    slug: "monvyn",
+    name: "Monvyn",
+    shortName: "Monvyn",
+    tagline: "Clarity for every dollar — elegant expense tracking.",
+    description:
+      "Monvyn is a refined personal finance app for tracking income and expenses, setting category budgets, and understanding spending with clear insights. Secure accounts keep your ledger synced across sessions.",
+    category: "Finance",
+    ai: false,
+    accent: "#1B3A4B",
+    accentSoft: "#F3EDE4",
+    icon: "/products/monvyn/icon.png",
+    cover: "/products/monvyn/screenshot-1.jpg",
+    featureGraphic: "/products/monvyn/feature-graphic.jpg",
+    gallery: [
+      {
+        src: "/products/monvyn/screenshot-1.jpg",
+        alt: "Monvyn dashboard with balance overview",
+        label: "Dashboard",
+      },
+      {
+        src: "/products/monvyn/home.jpg",
+        alt: "Monvyn welcome and sign-in",
+        label: "Welcome",
+      },
+      {
+        src: "/products/monvyn/screenshot-2.jpg",
+        alt: "Monvyn transactions list",
+        label: "Transactions",
+      },
+      {
+        src: "/products/monvyn/screenshot-3.jpg",
+        alt: "Monvyn add expense screen",
+        label: "Add expense",
+      },
+      {
+        src: "/products/monvyn/screenshot-4.jpg",
+        alt: "Monvyn budgets screen",
+        label: "Budgets",
+      },
+      {
+        src: "/products/monvyn/screenshot-5.jpg",
+        alt: "Monvyn spending insights",
+        label: "Insights",
+      },
+      {
+        src: "/products/monvyn/screenshot-6.jpg",
+        alt: "Monvyn profile and account",
+        label: "Profile",
+      },
+    ],
+    features: [
+      {
+        title: "Income & expenses",
+        desc: "Log transactions quickly with categories, notes, and clear amounts.",
+      },
+      {
+        title: "Budgets that stick",
+        desc: "Set monthly category budgets and watch remaining spend at a glance.",
+      },
+      {
+        title: "Spending insights",
+        desc: "Charts and summaries help you see where money goes each month.",
+      },
+      {
+        title: "Secure account sync",
+        desc: "Sign in to keep your ledger synced, with password reset when you need it.",
+      },
+    ],
+    highlights: [
+      "Elegant navy & gold design built for calm daily use",
+      "Dashboard balance, recent activity, and month filters",
+      "Category budgets with progress you can act on",
+      "Account-backed data with privacy-first policies",
+    ],
+    platforms: ["iOS", "Android"],
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.one2w.expensetracker",
+    privacyPolicyUrl: "/privacy/monvyn#account-deletion",
+  },
 ];
 
 export function getProduct(slug: string) {

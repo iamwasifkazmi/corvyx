@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "Corvyx",
   tagline: "Mobile apps that make everyday life easier.",
   description:
-    "Corvyx builds elegant mobile apps — with and without AI — that simplify documents, photos, video, and daily workflows.",
+    "Corvyx builds elegant mobile apps — with and without AI — that simplify documents, photos, video, fitness, and personal finance.",
   url: "https://corvyx.co",
   locale: "en_US",
   email: "hello@corvyx.co",

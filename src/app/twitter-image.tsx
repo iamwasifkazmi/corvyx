@@ -83,7 +83,7 @@ export default async function Image() {
             fontFamily: "system-ui, sans-serif",
           }}
         >
-          <span>PDF Pocket · OneSnap · OneCut</span>
+          <span>PDF Pocket · OneSnap · OneCut · MoveUp · Monvyn</span>
           <span>corvyx.co</span>
         </div>
       </div>

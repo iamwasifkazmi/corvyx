@@ -71,7 +71,8 @@ export default function PrivacyPage() {
             This Privacy Policy explains how {siteConfig.name} (“we”, “us”, or
             “our”) collects, uses, and protects information when you visit{" "}
             {siteConfig.url} or use our mobile applications, including PDF Pocket,
-            OneSnap: Photo Editor, OneCut: Video Editor &amp; Maker, and MoveUp Gym.
+            OneSnap: Photo Editor, OneCut: Video Editor &amp; Maker, MoveUp Gym, and
+            Monvyn.
           </p>
         </section>
 
@@ -136,9 +137,9 @@ export default function PrivacyPage() {
           <p className="mt-3">
             We retain information only as long as needed for the purposes described
             in this policy, unless a longer period is required by law. App-specific
-            retention details (including how long account and workout data are kept,
-            and what happens after deletion) are stated in each app’s privacy policy
-            linked above.
+            retention details (including how long account, workout, and finance data
+            are kept, and what happens after deletion) are stated in each app’s
+            privacy policy linked above.
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
