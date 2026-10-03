@@ -29,8 +29,9 @@ export default function TermsPage() {
           <p className="mt-3">
             By accessing {siteConfig.url} or using {siteConfig.name} apps
             (including PDF Pocket, OneSnap: Photo Editor, OneCut: Video Editor
-            &amp; Maker, MoveUp Gym, and Monvyn), you agree to these Terms of
-            Service. If you do not agree, do not use our services.
+            &amp; Maker, MoveUp Gym, Monvyn, and Monvyn VPN: Fast &amp; Secure),
+            you agree to these Terms of Service. If you do not agree, do not use
+            our services.
           </p>
         </section>
 

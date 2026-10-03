@@ -25,8 +25,8 @@ export default function AboutPage() {
         <div className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted">
           <p>
             <span className="font-medium text-ink">{siteConfig.name}</span> builds
-            mobile experiences that remove friction from documents, photos, and
-            video.
+            mobile experiences that remove friction from documents, photos,
+            video, fitness, finance, and online security.
           </p>
           <p>
             Some apps use AI when it helps. Others stay classic and on-device —

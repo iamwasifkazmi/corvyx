@@ -314,6 +314,71 @@ export const products: Product[] = [
       "https://play.google.com/store/apps/details?id=com.one2w.expensetracker",
     privacyPolicyUrl: "/privacy/monvyn#account-deletion",
   },
+  {
+    slug: "monvyn-vpn",
+    name: "Monvyn VPN: Fast & Secure",
+    shortName: "Monvyn VPN",
+    tagline: "Free global VPN locations — one tap to connect.",
+    description:
+      "Monvyn VPN is a free, elegant VPN client with servers around the world. Browse locations, pick a country, and protect your connection with OpenVPN — no account required.",
+    category: "Security",
+    ai: false,
+    accent: "#0F766E",
+    accentSoft: "#E6F7F5",
+    icon: "/products/monvyn-vpn/icon.png",
+    cover: "/products/monvyn-vpn/screenshot-1.png",
+    featureGraphic: "/products/monvyn-vpn/feature-graphic.jpg",
+    gallery: [
+      {
+        src: "/products/monvyn-vpn/screenshot-1.png",
+        alt: "Monvyn VPN home connect screen",
+        label: "Home",
+      },
+      {
+        src: "/products/monvyn-vpn/screenshot-2.png",
+        alt: "Monvyn VPN server locations list",
+        label: "Locations",
+      },
+      {
+        src: "/products/monvyn-vpn/screenshot-3.png",
+        alt: "Monvyn VPN settings screen",
+        label: "Settings",
+      },
+      {
+        src: "/products/monvyn-vpn/home.png",
+        alt: "Monvyn VPN protected connection view",
+        label: "Connected",
+      },
+    ],
+    features: [
+      {
+        title: "One-tap connect",
+        desc: "Connect or disconnect instantly with a clear status, timer, and traffic stats.",
+      },
+      {
+        title: "Global locations",
+        desc: "Browse free servers worldwide — search, sort by ping or speed, and save favorites.",
+      },
+      {
+        title: "OpenVPN security",
+        desc: "Industry-standard OpenVPN tunneling on Android and iOS with system VPN permission.",
+      },
+      {
+        title: "No account needed",
+        desc: "Start protecting your connection immediately — no sign-up or subscription wall.",
+      },
+    ],
+    highlights: [
+      "Elegant dark UI built for fast daily use",
+      "Country flags, ping, and speed at a glance",
+      "Favorites and best-per-country server picks",
+      "Free community server network with regular refresh",
+    ],
+    platforms: ["iOS", "Android"],
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.one2w.freevpn",
+    privacyPolicyUrl: "/privacy/monvyn-vpn#account-deletion",
+  },
 ];
 
 export function getProduct(slug: string) {

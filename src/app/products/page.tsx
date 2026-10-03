@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Products",
   description:
-    "Explore Corvyx apps — PDF Pocket, OneSnap, OneCut, MoveUp Gym, and Monvyn with screenshots and features.",
+    "Explore Corvyx apps — PDF Pocket, OneSnap, OneCut, MoveUp Gym, Monvyn, and Monvyn VPN with screenshots and features.",
   path: "/products",
 });
 
@@ -21,7 +21,7 @@ export default function ProductsPage() {
           Apps with real screens, real purpose.
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-muted">
-          PDF Pocket, OneSnap, OneCut, MoveUp Gym, and Monvyn — previews, features, and details.
+          PDF Pocket, OneSnap, OneCut, MoveUp Gym, Monvyn, and Monvyn VPN — previews, features, and details.
         </p>
       </div>
 

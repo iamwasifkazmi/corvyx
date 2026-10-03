@@ -270,6 +270,51 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
       emailSubject: "Monvyn account deletion",
     },
   },
+  {
+    slug: "monvyn-vpn",
+    appName: "Monvyn VPN: Fast & Secure",
+    description:
+      "Privacy Policy for Monvyn VPN — how we handle connection, device, and advertising data.",
+    productPath: "/products/monvyn-vpn",
+    informationCollected: [
+      "VPN connection details needed to establish a tunnel (such as selected server, connection status, and session timing shown in the app).",
+      "Network and device information required for VPN operation and app stability (for example network state and basic diagnostics, if enabled).",
+      "Preferences you save on device (such as selected server and favorite locations).",
+      "Advertising identifiers and related data when ads are shown (for example via Google AdMob), subject to your device settings and applicable consent rules.",
+    ],
+    howWeUse: [
+      "To provide VPN connectivity, server lists, favorites, and connection status in the app.",
+      "To improve reliability, diagnose issues, and respond to support requests.",
+      "To show ads that help keep Monvyn VPN free to use.",
+      "To comply with legal obligations where applicable.",
+    ],
+    onDeviceNote:
+      "Monvyn VPN does not require an account. Favorites and last-selected server are stored locally on your device. Your internet traffic is routed through the VPN server you choose; Corvyx does not operate a private account backend for this app.",
+    dataRetention: {
+      intro:
+        "Monvyn VPN keeps most data on your device. Third-party VPN nodes and advertising partners may process limited technical data under their own policies.",
+      items: [
+        "App preferences (selected server, favorites) remain on your device until you clear app data or uninstall Monvyn VPN.",
+        "We do not create a Corvyx user account for Monvyn VPN, so we do not retain account profiles for this product.",
+        "Community or third-party VPN servers you connect to may independently log technical connection data according to their own practices; Corvyx does not control those servers.",
+        "Advertising partners (for example Google AdMob) may process advertising identifiers according to their retention policies and your device consent settings.",
+        "If you contact us for support, any email you send is retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
+        "Optional diagnostics or crash reports, if enabled, may be retained by service providers for a limited period needed to diagnose issues (typically up to 90 days).",
+      ],
+    },
+    dataDeletion: {
+      intro:
+        "Monvyn VPN does not require an account. You can remove local app data directly on your device.",
+      steps: [
+        "Open Monvyn VPN and remove any saved favorites if you wish.",
+        "Disconnect from any active VPN session.",
+        "To remove all app data, uninstall Monvyn VPN from your device settings.",
+      ],
+      note:
+        "Uninstalling the app removes locally stored preferences and favorites. Advertising identifiers are managed through your device advertising/privacy settings.",
+      emailSubject: "Monvyn VPN data deletion",
+    },
+  },
 ];
 
 export function getAppPrivacyPolicy(slug: string) {

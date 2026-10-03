@@ -31,6 +31,8 @@ export const metadata: Metadata = {
     "OneCut",
     "MoveUp Gym",
     "Monvyn",
+    "Monvyn VPN",
+    "VPN",
     "fitness app",
     "photo editor",
     "video editor",
