@@ -7,13 +7,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/products", "/about", "/contact", "/privacy", "/terms"];
 
   const privacyRoutes = appPrivacyPolicies.map((policy) => `/privacy/${policy.slug}`);
+  const deleteAccountRoutes = ["monvyn", "moveup-gym"].map(
+    (slug) => `/delete-account/${slug}`,
+  );
 
-  const pages = [...staticRoutes, ...privacyRoutes].map((path) => ({
-    url: `${siteConfig.url}${path}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : 0.8,
-  }));
+  const pages = [...staticRoutes, ...privacyRoutes, ...deleteAccountRoutes].map(
+    (path) => ({
+      url: `${siteConfig.url}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: path === "" ? 1 : 0.8,
+    }),
+  );
 
   const productPages = products.map((product) => ({
     url: `${siteConfig.url}/products/${product.slug}`,

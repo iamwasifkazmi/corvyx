@@ -238,8 +238,9 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
         "Monvyn stores account and ledger data on our servers so your expenses and budgets sync across sessions. We retain data only as long as needed to provide the service, as described below.",
       items: [
         "Account data (name, email, password hash) is retained on our servers for as long as your account remains active.",
-        "Expenses, income records, categories, and budgets are retained on our servers for as long as your account remains active, or until you request deletion.",
-        "When you delete your account (by email request), we permanently delete your user account and associated ledger data from our servers. Deletion is typically completed within 30 days after we verify ownership.",
+        "Expenses, income records, categories, and budgets are retained on our servers for as long as your account remains active, or until you use Delete all data or Delete account in the app.",
+        "When you use Delete all data, we permanently delete your expenses, income, budgets, and custom categories from our servers and restore default categories. Your account (name and email) remains so you can keep signing in.",
+        "When you delete your account (in-app or by email request), we permanently delete your user account and associated ledger data from our servers. Deletion is typically completed immediately in-app, or within 30 days for email requests.",
         "Local device data (such as login token stored via device preferences) remains on your device until you log out, clear app data, or uninstall Monvyn.",
         "Advertising partners (for example Google AdMob) may process advertising identifiers according to their own retention policies and your device consent settings. We do not control how long those partners retain identifiers.",
         "Support emails you send us are retained only as long as needed to resolve your request (typically up to 12 months), then deleted unless a longer period is required by law.",
@@ -248,13 +249,24 @@ export const appPrivacyPolicies: AppPrivacyPolicy[] = [
     },
     dataDeletion: {
       intro:
-        "You can request permanent deletion of your Monvyn account and associated ledger data by email. Uninstalling the app removes local data only; server data remains until your account is deleted.",
+        "You can delete your ledger data or permanently delete your Monvyn account directly inside the app. No email request is required for in-app deletion.",
       steps: [
-        "Email us from the address linked to your Monvyn account.",
-        "Use the subject line below and include your registered email address.",
-        "We will verify ownership and permanently delete your account, expenses, budgets, and related data within 30 days.",
+        "Open Monvyn and sign in to your account.",
+        "Open Profile from the bottom navigation.",
+        "Scroll to the Privacy & data section.",
+        "Choose one of the following:",
       ],
-      note: "You can sign out anytime from Profile in the app. Deletion of server data is permanent and cannot be undone.",
+      options: [
+        {
+          title: "Delete all data",
+          desc: "Clears expenses, income, budgets, and custom categories. Your account stays active.",
+        },
+        {
+          title: "Delete account",
+          desc: "Permanently removes your account and all associated data from our servers.",
+        },
+      ],
+      note: "Confirm your choice in the dialog that appears. Deletion is permanent and cannot be undone.",
       emailSubject: "Monvyn account deletion",
     },
   },
@@ -429,6 +441,50 @@ export function AppPrivacyPolicyPage({ policy }: AppPrivacyPolicyPageProps) {
                 </div>
                 <figcaption className="mt-4 text-center text-sm text-muted">
                   Delete options in MoveUp Gym under{" "}
+                  <strong className="text-ink">Profile → Privacy & data</strong>
+                </figcaption>
+              </figure>
+            )}
+
+            {policy.slug === "monvyn" && (
+              <figure className="mt-8">
+                <div className="mx-auto max-w-[280px] overflow-hidden rounded-[1.85rem] border border-line bg-[#F7F5F2] p-3 shadow-lg">
+                  <div className="rounded-[1.4rem] border border-black/10 bg-white p-4">
+                    <p className="text-[11px] font-semibold tracking-[0.12em] text-[#6B7C86] uppercase">
+                      Privacy & data
+                    </p>
+                    <div className="mt-3 space-y-3 rounded-xl border border-[#E2E6E9] bg-white p-3">
+                      <div className="flex gap-3 border-b border-[#E2E6E9] pb-3">
+                        <span className="text-[#C45C4A]">🗑</span>
+                        <div>
+                          <p className="text-sm font-semibold text-[#C45C4A]">
+                            Delete all data
+                          </p>
+                          <p className="mt-1 text-xs leading-relaxed text-[#6B7C86]">
+                            Clears expenses, income, budgets, and custom categories.
+                            Your account stays active.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-red-600">👤</span>
+                        <div>
+                          <p className="text-sm font-semibold text-red-600">
+                            Delete account
+                          </p>
+                          <p className="mt-1 text-xs leading-relaxed text-[#6B7C86]">
+                            Permanently removes your account and all associated data.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-center text-[10px] text-[#6B7C86]">
+                      Profile → Privacy & data
+                    </p>
+                  </div>
+                </div>
+                <figcaption className="mt-4 text-center text-sm text-muted">
+                  Delete options in Monvyn under{" "}
                   <strong className="text-ink">Profile → Privacy & data</strong>
                 </figcaption>
               </figure>
